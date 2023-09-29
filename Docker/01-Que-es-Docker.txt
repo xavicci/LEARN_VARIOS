@@ -1,0 +1,19 @@
+Docker es una plataforma de código abierto que permite la creación, implementación y ejecución de aplicaciones dentro de contenedores. Los contenedores son entornos ligeros y portátiles que contienen todo lo necesario para que una aplicación se ejecute de manera independiente, incluyendo el código, las bibliotecas, las dependencias y las variables de entorno.
+
+En lugar de ejecutar aplicaciones directamente en un sistema operativo subyacente, Docker utiliza contenedores para aislar y gestionar las aplicaciones. Esto proporciona una mayor flexibilidad y portabilidad, ya que los contenedores pueden ejecutarse en diferentes entornos sin problemas, ya sea en una máquina física, en una máquina virtual o en la nube.
+
+Docker utiliza una tecnología llamada “Docker Engine” para construir y administrar los contenedores. Docker Engine se encarga de descargar y ejecutar imágenes de contenedor, que son plantillas preconfiguradas que contienen todo lo necesario para ejecutar una aplicación. Estas imágenes se almacenan en un registro llamado “Docker Hub”, aunque también se pueden crear y gestionar repositorios privados.
+
+Una de las principales ventajas de Docker es su capacidad para simplificar el proceso de desarrollo y despliegue de aplicaciones. Permite empaquetar una aplicación y todas sus dependencias en un contenedor único, lo que facilita la reproducción exacta del entorno de ejecución en diferentes sistemas. Además, Docker permite la escalabilidad horizontal, lo que significa que múltiples contenedores pueden ejecutarse simultáneamente para manejar cargas de trabajo más pesadas.
+
+What is a container?
+A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. That isolation leverages kernel namespaces and cgroupsopen_in_new, features that have been in Linux for a long time. Docker makes these capabilities approachable and easy to use. To summarize, a container:
+
+Is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI.
+Can be run on local machines, virtual machines, or deployed to the cloud.
+Is portable (and can be run on any OS).
+Is isolated from other containers and runs its own software, binaries, configurations, etc.
+If you're familiar with chroot, then think of a container as an extended version of chroot. The filesystem comes from the image. However, a container adds additional isolation not available when using chroot.
+
+What is an image?
+A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.

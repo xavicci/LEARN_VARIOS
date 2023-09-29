@@ -1,0 +1,14 @@
+docker run -d --name proxy nginx
+docker stop proxy
+docker rm proxy
+docker rm -f always
+docker run --name proxy -p 8080:80 nginx
+docker run --name proxy -d -p 8080:80 nginx   :: -d detach - que corra en background
+docker logs proxy
+docker logs -f proxy   :: -f de follow de logs.
+docker logs --tail 10 -f proxy :: (veo y sigo solo las 10 últimas entradas del log)
+
+
+
+
+

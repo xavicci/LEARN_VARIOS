@@ -1,0 +1,5 @@
+https://leanpub.com/b/erase-una-vez-contenedores
+https://platzi.com/clases/1431-devops/15321-implementacion-de-dockerfile/
+https://www.mygreatlearning.com/blog/top-essential-docker-commands/
+https://docs.docker.com/engine/reference/commandline/docker/
+https://docs.docker.com/get-started/docker_cheatsheet.pdf

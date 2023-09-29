@@ -1,0 +1,34 @@
+Comandos:
+$ docker run hello-world (corro el contenedor hello-world)
+$ docker ps (muestra los contenedores activos)
+$ docker ps -a (muestra todos los contenedores)
+$ docker inspect <containe ID> (muestra el detalle completo de un contenedor)
+$ docker inspect <name> (igual que el anterior pero invocado con el nombre)
+$ docker run –-name hello-platzi hello-world (le asigno un nombre custom “hello-platzi”)
+$ docker rename hello-platzi hola-platzy (cambio el nombre de hello-platzi a hola-platzi)
+$ docker rm <ID o nombre> (borro un contenedor)
+$ docker container prune (borro todos lo contenedores que esten parados)
+
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+$ docker -it ubuntu (lo corre y entro al shell de ubuntu)
+-i: interactivo
+-t: abre la consola
+
+cat /etc/lsb-release (veo la versión de Linux)
+
+Un contenedor se apaga cuando su main process se finaliza, por ejemplo "exit" esta ligado con "/bin/bash"
+
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+
+Como hacer para que no se apague cuando se hace "exit"
+
+docker run --name contenederX -d ubuntu tail -f /dev/null
+  **[(tail -f /dev/null) creamos este proceso que hace un loop infinito] **
+  **El flag “-d” : corre el contenedor en modo background e imprime el ID del contenedor.
+
+Ahora de este modo ingresamos :  docker exec -it contenederX bash 
+con ps -aux vemos su proceso que si lo matamos con "kill" este se cerrara y apagara su contenedor.

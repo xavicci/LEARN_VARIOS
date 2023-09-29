@@ -1,0 +1,151 @@
+{
+  "main": {
+    "id": "05193c4de2add973",
+    "type": "split",
+    "children": [
+      {
+        "id": "40841303b5cb9574",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9fcaca5dadb5fdb4",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4efe1d7027907d02",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b794581f01c1044",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3eebb502ca09439",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fef3df8742085992",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c59d38b0f12d56f3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 220.5
+  },
+  "right": {
+    "id": "a90645498197cde1",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a661240c25c313e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "900ccb9d0de66b7b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "517f6c6bb65ff547",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8532c7d03e3935ba",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b5e66ce67ba27503",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir quick switcher": false,
+      "graph:Abrir vista de gráfico": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "b3eebb502ca09439",
+  "lastOpenFiles": [
+    "01-A1_CONVERSACIONES",
+    "00-Estrategias/Tareas.txt",
+    "00-Estrategias/03-estrategias.txt",
+    "00-Estrategias/slides-estrategias.pdf",
+    "00-Estrategias/02-requerimientos.txt",
+    "00-Estrategias/01-porqueaprender.txt",
+    "00-Estrategias"
+  ]
+}

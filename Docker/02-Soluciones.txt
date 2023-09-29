@@ -1,0 +1,42 @@
+Docker te permite construir, distribuir y ejecutar cualquier aplicación en cualquier lado.
+
+Problemática:
+
+Construir: Un entorno de desarrollo donde podamos escribir código resolviendo las siguientes problemáticas:
+Entorno de desarrollo.- paquetes y sus versiones
+Dependencias.- frameworks, bibliotecas
+Entorno de ejecución.- Versiones de node, etc.
+Equivalencia con entorno productivo.- Simular lo mas posible el entorno local al productivo.
+Servicios externos.- Comunicación con base de datos (versiones, etc)
+
+Distribuir: Llevar nuestro código (artefactos) a donde tenga que llegar.
+Divergencia de repositorios.- Colocar los artefactos en su repositorio correspondiente.
+Divergencia de artefactos.- Existen variedad de artefactos en una aplicación.
+Versionamiento.- Mantener un versionado de código en las publicaciones.
+
+Ejecutar: Hacer que el desarrollo o los artefactos que se programaron en local funcionen en productivo. La máquina donde se escribe el software siempre es distinta a la máquina donde se ejecuta de manera productiva.
+Compatibilidad con el entorno productivo
+Dependencias
+Disponibilidad de servicios externos
+Recursos de hardware
+
+Problems when building:
+Development dependencies (packages)
+Runtime versions
+Equivalence of development environments (code sharing)
+Equivalence of production environments(go to production)
+Versions / compatibility(integration of other services e.g.: databases)
+Problems when distributing:
+Different build generations
+Access to production servers
+Native vs. distributed execution
+Serverless
+Problems when executing:
+Application dependencies
+Operating System Compatibility
+Availability of external services
+Hardware Resources
+Docker allows:
+Build, distribute and run your code anywhere without worrying.
+
+

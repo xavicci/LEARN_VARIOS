@@ -1,0 +1,9 @@
+BIND-MOUNT
+
+docker run -d --name db mongo
+docker exec -it db bash
+docker run -d --name db -v C:\CODEVS\Docker\dockerdata\mongodata:/data/db mongo :: -v esto hace un espejo de la informacion de la ruta en C:\CODEVS\Docker\dockerdata\mongodata a la ruta /data/db
+
+
+
+

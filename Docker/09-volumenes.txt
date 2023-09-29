@@ -1,0 +1,16 @@
+estos volumenes es una version mejorada de bind mount ya
+que evita problemas de seguridad y manejo de archivos.
+
+Estos volumenes son administrados directamente por docker
+
+
+$ docker volume ls ::   (listo los volumes)
+$ docker volume create dbdata ::    (creo un volume)
+$ docker run -d --name db --mount src=dbdata,dst=/data/db mongo ::  (corro la BBDD y la monto en el volume dbdata pero a su vez hago un espejo de la informacion en mi Imagen de mongo al volumen dbdata)
+$ docker inspect db ::  (veo la información detallada del contenedor)
+
+
+
+Ojo que el contenido de los volúmenes “aministrados por Docker” sí se puede acceder desde fuera… Simplemente hay que hacer docker volume inspect VOLUME_NAME, ahí aparecerá el “Mountpoint” del volumen (path en el disco local), y si nos dirigimos allí (con usuario administrador o sudo en sistemas UNIX) podremos ver todo el contenido y gestionarlo.
+
+
