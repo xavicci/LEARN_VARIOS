@@ -26,9 +26,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "9190fe2b55d6a1cb",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.14"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -155,7 +165,7 @@
       "canvas:Create new canvas": false
     }
   },
-  "active": "8c23d2ae6422a17b",
+  "active": "9190fe2b55d6a1cb",
   "lastOpenFiles": [
     "01-A1_CONVERSACIONES/assets/Pasted image 20230928193619.png",
     "01-A1_CONVERSACIONES/01-ALPHABET.md",
