@@ -11,14 +11,6 @@
             "id": "9fcaca5dadb5fdb4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "8c23d2ae6422a17b",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
                 "file": "01-A1_CONVERSACIONES/01-ALPHABET.md",
@@ -28,17 +20,19 @@
             }
           },
           {
-            "id": "9190fe2b55d6a1cb",
+            "id": "a27bf2759f52cc60",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.4.14"
+                "file": "01-A1_CONVERSACIONES/02-SPELLED.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -104,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01-A1_CONVERSACIONES/01-ALPHABET.md",
+                "file": "01-A1_CONVERSACIONES/02-SPELLED.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01-A1_CONVERSACIONES/01-ALPHABET.md",
+                "file": "01-A1_CONVERSACIONES/02-SPELLED.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-A1_CONVERSACIONES/01-ALPHABET.md"
+                "file": "01-A1_CONVERSACIONES/02-SPELLED.md"
               }
             }
           }
@@ -165,10 +159,11 @@
       "canvas:Create new canvas": false
     }
   },
-  "active": "9190fe2b55d6a1cb",
+  "active": "a27bf2759f52cc60",
   "lastOpenFiles": [
-    "01-A1_CONVERSACIONES/assets/Pasted image 20230928193619.png",
     "01-A1_CONVERSACIONES/01-ALPHABET.md",
+    "01-A1_CONVERSACIONES/02-SPELLED.md",
+    "01-A1_CONVERSACIONES/assets/Pasted image 20230928193619.png",
     "01-A1_CONVERSACIONES/assets",
     "01-A1_CONVERSACIONES",
     "00-Estrategias/Tareas.txt",
