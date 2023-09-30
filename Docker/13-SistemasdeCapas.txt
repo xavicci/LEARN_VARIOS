@@ -1,0 +1,43 @@
+Docker commit tiene un funcionamiento muy parecido al commit de git.
+
+Guarda el estado de la capa mutable en un tag de la imagen a partir de la cual se genero el contenedor creando una capa mas para crear uno o mas contenedores a partir de esta nueva imagen.
+
+Comandos:
+
+$ docker history ubuntu:platzi (veo la info de como se construyó cada capa)
+$ dive ubuntu:platzi (veo la info de la imagen con el programa dive)
+
+
+
+
+
+
+     El sistema de capas
+Las imágenes son un conjunto de capas, y a partir del Dockerfile se puede saber como está construido una imagen. Existen distintas maneras de ver las capas que conforman una imagen:
+
+Si la imagen es pública se puede visitar Dockerhub y buscar una imagen para ver su Dockerfile. Una vez encontrar la imagen buscamos en los tag y haciendo clic en los tag se mostrará el docker file para construir dicha imagen.
+
+Se puede hacer a través de la línea, esta opción no es muy cómoda. Es importante destaca que los cambios se presenta por filas y las filas más inferiores son los cambios más viejos y las que están más arriba son los cambios más recientes. el comando es:
+
+$ sudo docker history <nombre imagen: nombre tag>
+Ejemplo:
+$ sudo docker history ubuntu:platzi
+
+Otra opción es una herramienta de terminal creada por un usuario llamada dive https://github.com/wagoodman/dive, al ejecutar esta herramienta se puede visualizar que del lado izquierdo las capas que tiene la imagen y del lado derecho se visualiza el detalle de cambios que genera cada capa. el comando es el siguiente:
+$ sudo dive <nombre de imagen:nombre tag>
+Ejemplo:
+$ sudo dive ubuntu:platzi
+
+Los cambios que se muestran en la terminal son de la siguiente forma, los más antiguos abajo y los más recientes arriba
+
+En la construcción de una imagen Es importante tomar en cuenta lo siguiente:
+
+En la construcción de una imagen, se puede optar por instalar paquetes o crear archivos en una capa y luego desinstalar los paquetes o eliminar los archivos en otra capa. Esto es poco óptimo porque las capas son inmutables y en este caso estaríamos desperdiciando espacios. El motivo de que las capas son inmutables es para que al momento de crear una imagen docker no agrega capas ya creadas.
+
+Una estrategia para evitar desperdiciar espacio es que en la misma capa se cree o instalen los paquetes y luego de terminar la operación que esto realizan se desinstale o eliminen.
+
+Otra estrategia de optimizar es que una vez creado el creada la imagen todas las operaciones se hagan desde un contenedor.
+
+¿para que instalar dive si podemos correrlo en un contenedor docker?
+
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest $IMAGE
