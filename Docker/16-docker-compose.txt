@@ -1,0 +1,17 @@
+docker-compose para apps en Python y Django
+file tree
+|__ docker-compose.yml
+|__ Dockerfile
+|__ requirements.txt
+
+Docker compose nos ayuda utilizar docker con una estructura declarativa y facilita la gestión. Toda la configuración la podemos encontrar en el fichero .YAML.
+
+Docker Compose es una herramienta que permite simplificar el uso de Docker. A partir de archivos YAML es mas sencillo crear contendores, conectarlos, habilitar puertos, volumenes, etc.
+
+Con Compose puedes crear diferentes contenedores y al mismo tiempo, en cada contenedor, diferentes servicios, unirlos a un volúmen común, iniciarlos y apagarlos, etc. Es un componente fundamental para poder construir aplicaciones y microservicios.
+
+Docker Compose te permite mediante archivos YAML, poder instruir al Docker Engine a realizar tareas, programáticamente. Y esta es la clave, la facilidad para dar una serie de instrucciones, y luego repetirlas en diferentes ambientes.
+
+$docker-compose up -d  
+$docker-compose  logs -f app
+

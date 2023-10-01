@@ -1,0 +1,93 @@
+Comandos:
+
+$ git clone https://github.com/platzi/docker
+$git clone https://github.com/platzi/docker --config core.autocrlf=input
+
+$ docker build -t platziapp . (creo la imagen local)
+$ docker image ls (listo las imagenes locales)
+$ docker run --rm -p 3000:3000 platziapp (creo el contenedor y cuando se detenga se borra por --rm, lo publica el puerto 3000)
+$ docker ps (veo los contenedores activos)
+
+
+docker build ha sido deprecado
+
+docker recomienda usar “docker buildx build” para construir una imagen de Docker utilizando una instancia de BuildKit.
+
+BuildKit es una herramienta de construcción de código abierto que ofrece una serie de mejoras de rendimiento y funcionalidades adicionales en comparación con el constructor de Docker clásico.
+
+docker buildx build -t mi-imagen .
+El comando “docker buildx build” permite aprovechar las capacidades avanzadas de BuildKit para construir imágenes de Docker de manera más rápida y eficiente, y también ofrece la capacidad de crear imágenes multi-plataforma con una única construcción.
+
+****************************************************************************
+****************************************************************************
+
+
+FROM node:12
+
+COPY [".", “/usr/src/”]
+
+WORKDIR /usr/src
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD [“node”, “index.js”]
+####################
+
+docker build -t platziapp .
+docker image ls
+docker run --rm -p 3000:3000 platziapp
+
+– usando cache
+nano Dockerfile
+
+#####Dockerfile#####
+FROM node:12
+
+COPY [“package.json”, “package-lock.json”, “/usr/src/”]
+
+WORKDIR /usr/src
+
+RUN npm install
+
+COPY [".", “/usr/src/”]
+
+EXPOSE 3000
+
+CMD [“node”, “index.js”]
+####################
+
+docker build -t platziapp .
+
+– probamos cambiando el codigo en index.js, cambiando de BOOM a PUM
+nano index.js
+docker build -t platziapp .
+
+– queremos que nuestro contenedor se actualice cada vez que cambiamos codigo en index.js, vamos a usar un proceso propio de NODE
+
+nano Dockerfile
+
+#####Dockerfile#####
+FROM node:14
+
+COPY [“package.json”, “package-lock.json”, “/usr/src/”]
+
+WORKDIR /usr/src
+
+RUN npm install
+
+COPY [".", “/usr/src/”]
+
+EXPOSE 3000
+
+CMD [“npx”, “nodemon”, “index.js”]
+Ó
+CMD ["npx", "nodemon", "-L", "index.js"]
+
+####################
+
+La clave está en estructurar nuestro Dockerfile de manera de que primero se copien todas las dependencias y posteriormente nuestro código fuente, que es el mas suceptible a cambios.
+
+$ docker build -t platziapp . (creo la imagen local)
+$ docker run --rm -p 3000:3000 -v $(pwd)/index.js:pathcontenedor/index.js platziapp (corro un contenedor y monto el archivo index.js para que se actualice dinámicamente con nodemon que está declarado en mi Dockerfile)

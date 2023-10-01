@@ -1,0 +1,17 @@
+Las tres formas de persistencia de datos en docker son blind mount, volume y tmpfs mount.
+
+volume, son administrados por docker, se encuentran en /var/lib/docker/volumes/ en linux, Sólo los procesos de docker debería de poder modificar esta parte del filesystem.
+
+blind mount, Son almacenados en cualquier lugar del sistema incluso del HOST y los cualquier proceso puede tener acceso para realizar modificaciones.
+
+tmpfs mount, son guardados en la memoria temporal de DOCKER. Usados para guardar los datos durante la vida del contenedor.
+
+
+$ touch prueba.txt (creo un archivo en mi máquina) 
+$ docker run -d --name copytest ubuntu tail -f /dev/null (corro ubuntu en background y le agrego el tail -f /dev/null para crear un proceso de loop infinito) 
+$ docker exec -it copytest bash (entro al contenedor) 
+$ mkdir testing (creo un directorio en el contenedor) 
+$ docker cp prueba.txt copytest:/testing/test.txt (copio el archivo de mi SO dentro del contenedor COPYTEST) 
+$ docker cp copytest:/testing localtesting (copio el directorio de un contenedor a mi SO)
+
+"docker cp" no hace falta que el contenedor esté corriendo.
