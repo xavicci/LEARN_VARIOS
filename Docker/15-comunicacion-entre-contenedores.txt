@@ -1,0 +1,35 @@
+Comunicacion entre contenedores
+
+Se puede lograr que dos contenedores colaboren entre si en una misma red. Cómo se vio en el anterior ejemplo, al realizar la petición local no funcionaba porque no habrá ningún servidor de mongo db, se puede crear redes virtuales para contenedores con la instrucción
+por comando doker network y conectar los contenedores con docker network connect
+
+Docker viene con unas redes ya pre hechas
+
+
+$ docker network ls  :: listamos todas las redes de docker
+NETWORK ID     NAME      DRIVER    SCOPE
+89665e034fc9   bridge    bridge    local    ::comunicacion por default de docker
+ff39db7911c7   host      host      local    :: es una red para permitir acceso a internet
+418fbcf17ba9   none      null      local    :: una red sin acceso a nada
+
+$ docker network create --attachable  [nombre_red]  :: flag --attachable decimos que los contenedores se conecten a esa red
+
+$docker network connect [nombre_red] [container_name]
+
+$docker network inspect [nombre_red]
+
+$docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+docker network disconnect platzinet db
+
+$ docker network create \
+  --driver=bridge \
+  --subnet=172.28.0.0/16 \
+  --ip-range=172.28.5.0/24 \
+  --gateway=172.28.5.254 \
+  br0
+

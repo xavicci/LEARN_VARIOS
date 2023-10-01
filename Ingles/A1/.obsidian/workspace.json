@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9fcaca5dadb5fdb4",
+            "id": "a27bf2759f52cc60",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -130,16 +130,23 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Abrir quick switcher": false,
-      "graph:Abrir vista de gráfico": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Abrir la nota de hoy": false,
-      "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "canvas:Create new canvas": false
     }
   },
-  "active": "b3eebb502ca09439",
+  "active": "a27bf2759f52cc60",
   "lastOpenFiles": [
+    "01-A1_CONVERSACIONES/03-TIME CLOCK.md",
+    "01-A1_CONVERSACIONES/assets/Pasted image 20230930180042.png",
+    "01-A1_CONVERSACIONES/assets/Pasted image 20230930175125.png",
+    "01-A1_CONVERSACIONES/02-SPELLED.md",
+    "01-A1_CONVERSACIONES/01-ALPHABET.md",
+    "01-A1_CONVERSACIONES/assets/Pasted image 20230928193619.png",
+    "01-A1_CONVERSACIONES/assets",
     "01-A1_CONVERSACIONES",
     "00-Estrategias/Tareas.txt",
     "00-Estrategias/03-estrategias.txt",
