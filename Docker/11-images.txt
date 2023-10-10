@@ -1,0 +1,11 @@
+Las imagenes son como las clases en POO , es decir plantillas que se usan para construir los contenedores.
+Por default se descargan desde docker Hub Pages.
+
+$ docker image ls (veo las imágenes que tengo localmente) 
+$ docker pull ubuntu:20.04 (bajo la imagen de ubuntu con una versión específica) 
+
+$ docker image rm -f {id_image}
+$ docker image prune -a
+
+Historico de una imágen Podemos observar la historia de nuestra imágen, con el siguiente comando
+$ docker history [imagen]
