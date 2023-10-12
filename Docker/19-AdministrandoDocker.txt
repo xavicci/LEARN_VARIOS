@@ -1,0 +1,36 @@
+
+$docker container prune :: para matar todos los contenedores que estan apagados
+
+$docker rm -f $(docker ps -aq) :: borramos todos los contenedores aun estando activos gracias a la flag -q que lista todos los ids
+
+$docker system prune :: se borra container, volumes, images.
+
+docker run -d --name app --memory 1g platziapp  :: le asigno maximo 1Gb de memory.
+
+docker stats  :: para ver las estadisticas de los contenedores
+
+
+Comandos:
+$ docker ps -a (veo todos los contenedores de mi máquina)
+$ docker container prune (borra todos los contenedores inactivos)
+$ docker rm -f $(docker ps -aq) (borra todos los contenedores que estén corriendo o apagados)
+$ docker network ls (lista todas las redes)
+$ docker volume ls (lista todos los volumes)
+$ docker image ls (lista todas las imágenes)
+$ docker system prune (borra todo lo que no se esté usando)
+$ docker run -d --name app --memory 1g platziapp (limito el uso de memoria)
+$ docker stats (veo cuantos recursos consume docker en mi sistema)
+$ docker inspect app (puedo ver si el proceso muere por falta de recursos)
+
+deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+
+
+Commandos y Descripciones
+docker system df Show docker disk usage
+docker system events Get real time events from the server
+docker system infoDisplay system-wide information
+docker system prune Remove unused data

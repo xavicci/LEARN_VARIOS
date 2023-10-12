@@ -1,0 +1,18 @@
+docker run -it --rm -v //var/run/docker.sock:/var/run/docker.sock docker:latest
+
+Comandos:
+$ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:19.03.12
+$ docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $(wich docker):/bin/docker wagoodman/dive:latest prodapp
+
+
+Con docker in docker montamos y corremos un container de docker con docker, es como si tuvieramos una version temporal de docker?? Lo otro que creo que si entiendo es que el socket de docker es un archivo que tiene la informacion de las imagenes y los containers, por ello el comando docker ps tiene el mismo efecto dentro del container como fuera.
+
+Un socket en sistemas Unix se utiliza para comunicación entre procesos. El docker deamon es el que tiene acceso a las imagenes y containers y este se comunica con la maquina host a traves del socket. Lo que estamos haciendo aquí es comunicar a un docker deamon en un contenedor a el docker deamon de la maquina host a traves del socket.
+Sobre los usos de docker-in-docker… la verdad es que es recomendable no usarlo nunca porque trae problemas técnicos muy precisos que relaciona a como esta implementado docker. El responsable de docker-in-docker creo un articulo donde habla al respecto:
+https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/#:~:text=The primary purpose of Docker,into your Jenkins container instead.
+
+Si quieres saber mas sobre como usar docker-in-docker y usar mejores alternativas te recomiendo este articulo:
+https://blog.nestybox.com/2019/09/14/dind.html
+
+En resumen: Solo usa docker-in-docker como sandbox, para experimentar con contenedores e imágenes. Y si quieres algo parecido a docker-in-docker mejor usa sysbox.
+
