@@ -1,0 +1,36 @@
+Comandos:
+$ docker build -t loop . (construyo la imagen)
+$ docker run -d --name looper loop (corro el contenedor)
+$ docker stop looper (le envía la señal SIGTERM al contenedor)
+$ docker ps -l (muestra el ps del último proceso)
+$ docker kill looper (le envía la señal SIGKILL al contenedor)
+$ docker exec looper ps -ef (veo los procesos del contenedor)
+
+Shell: Ejecuta el proceso como hijo del shell
+
+FROM ubuntu:trusty
+COPY ["loop.sh", "/"]
+CMD /loop.sh
+Exec: Ejecuta el comando como principal
+
+FROM ubuntu:trusty
+COPY ["loop.sh", "/"]
+CMD ["/loop.sh"]
+
+
+Contexto de la lección SHELL vs. EXEC
+Al estar activo o recién crear un contendor, este debería estar ejecutando un proceso principal o main process para mantenerse en funcionamiento. En caso de que el main process se detenga el contendor debería dejar de funcionar.
+
+Docker tiene una manera de manejar los procesos de los contenedores de manera estándar, cuando se manda detener el contenedor con la instrucción
+docker stop <name-container>; con esta instrucción Docker manda una señal estándar de linux llamada SIGTERM al proceso; después de un tiempo el proceso deberá detenerse; en caso de no detenerse el proceso enviará otra señal llamada SIGKILL; con esta señal se garantiza que el proceso se ha terminado de manera forzada.
+
+Existen problemas en la terminación de procesos ejecutados en los contenedores, una de las causas está asociado a ¿Cómo se debería declarar en Dockerfile el proceso a ejecutar?
+
+digamos que tenemos estos dos archivos configurados de la siguiente manera
+27-archivo-bash.png
+27-archivo-docker-file-shell-form.png
+
+El primero es el dockerfile; sirve para construir nuestra imagen y el segundo es el archivo bash que se ejecutará como un main process o proceso principal del contenedor. Es importante destacar que la línea de CMD ejecuta nuestro archivo bash, a través de un shell, esta forma de expresar esta línea se conoce como shell form y esto genera que al momento de detener un contenedor que esté ejecutando un proceso por shell form necesariamente tendrá que usar un SIGKILL. Para evitar esto, el CMD debe ejecutar nuestro main process de form exec form , es decir nuestro archivo debe estar configurado de esta manera.
+
+27-archivo-docker-file-exec-form.png
+La idea de que el archivo esté configurado de esta manera es que de tiempo a que el contenedor procese las solicitudes restantes y pueda hacer un Great full shutdown. Otra nota importante es que los códigos de salida mayor a 128 es el resultado de una salida por un código de excepción.

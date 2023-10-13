@@ -1,0 +1,68 @@
+docker-compose nació como un proyecto open source que se llamaba fig y luego docker lo compró y lo renombró como docker-compose. El profesor tiene un alias tal que fig=docker-compose
+
+docker compose trabaja ahora con servicios y no contenedores.
+ademas cuando se crea servicios se comunican automaticamente.
+con docker compose no hace falta escribir it del modo interactivo
+version: "3.8"
+
+services:
+  app:
+	# crea una imagen con los ficheros del directorio actual.
+    build: .
+    environment:
+      MONGO_URL: "mongodb://db:27017/test"
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+	# Sección para definir los bindmount.
+    volumes: 
+			#<local path>:<container path> # el directorio "<.>" actual   se montará en "/usr/src" en el contenedor.
+      - .:/usr/src
+			# indica que ficheros debe ignorar
+      - /usr/src/node_modules
+	# Permite pasarle un comando a ejecutar al servicio app.
+    command: npx nodemon  index.js
+
+  db:
+    image: mongo
+
+
+
+Comandos:
+$ docker-compose build (crea las imágenes)
+$ docker-compose up -d (crea los servicios/contenedores)
+$ docker-compose logs app (veo los logs de “app”)
+$ docker-compose logs -f app (hago un follow de los logs de “app”)
+
+Primera forma para usar Docker compose como herramienta de desarrollo:
+La primera forma consiste crear una imagen con el código que se está modificando y luego cargarlo al servicio de docker compose para que builde la imagen con el código codificado de manera. La parte negativa es que cada cambio se tendrá construir una nueva imagen.
+
+Pasos
+
+Posicionarnos en nuestra carpeta de proyecto
+En el archivo.yml modificar el parámetro image lo modificamos por build , y a este parámetro le pasamos el path la dirección de nuestra carpeta. para este ejemplo práctico el archivo.yml está en la misma carpeta proyecto y colocamos un punto (.)
+Construir la imagen con el código del proyecto.
+Si se desea incluir nuevos cambios, primero se debe destruir la imagen y luego incluir los cambios.
+Construir la imagen con el código del proyecto.
+Ejecución de los pasos
+
+cd ~/docker-pj/docker
+build . en nuestro archivo.yml
+$ sudo docker-compose up -d
+$ sudo docker-compose down , incluir los cambios
+$ sudo docker-compose up -d
+El problema de esta opción es que es toma mucho tiempo.
+
+Segunda forma para usar Docker compose como herramienta de desarrollo:
+
+Pasos
+
+Posicionarnos en nuestra carpeta de proyecto
+En el archivo.yml modificar lo siguiente:
+El parámetro image lo modificamos por build le indicamos que sé la carpeta actual.
+Agregamos un Volumen indicando los archivos que se van a espejar, también como nuestro proyecto no tiene todas las dependencia de node instalada indicamos que use los node modules del contenedor
+Agregar un nodemon, que es una utilidad que monitorea cambios en los archivos.js, este lo podemos agregar en el CMD del dockerfile pero tendríamos que hacer rebuild de la imagen. Una mejor estrategía es en nuestro archivo.yml agregamos un command para que ejecute esta tarea.
+Construir la imagen con el código del proyecto.
+Ahora se pueden agregar cambios y verlo reflejado
+Ejecución de los pasos
