@@ -1,0 +1,6 @@
+1. Modelo de costos (CAPEX a OPEX): Cambio del gasto de capital (CAPEX) tradicional en infraestructura a gastos operativos (OPEX) variables según el uso, lo que permite una mayor flexibilidad financiera.
+2. Modelo de entrega/despliegue (Automatización y creación de ambientes): Automatización de la implementación y creación de ambientes a través de código, lo que agiliza la configuración y gestión de recursos.
+3. Patrones nativos de nube: Diseño de aplicaciones específicamente para aprovechar las características únicas de la nube, como escalabilidad horizontal y alta disponibilidad.
+4. Escalabilidad y resiliencia: Capacidad de aumentar dinámicamente los recursos y diseñar sistemas para resistir fallas y mantener la disponibilidad en diferentes zonas y regiones.
+5. Tecnologías disruptivas: Integración de tecnologías disruptivas como Inteligencia Artificial (IA), análisis de datos, robótica, satélites y automatización para innovar en soluciones.
+6. Modelo de seguridad compartida: Distribución de la responsabilidad de la seguridad entre el proveedor de servicios en la nube y el usuario, asegurando una implementación segura y cumplimiento normativo.

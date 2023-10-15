@@ -1,0 +1,3 @@
+Es la entrega por demanda de infraestructura y todo tipo de servicios de aplicacion vía internet.
+
+El “Cloud Computing” o “computación en la nube” se refiere a la entrega de servicios de computación, como almacenamiento, procesamiento de datos, servidores, bases de datos, redes y software, a través de Internet. En lugar de depender de infraestructura local o servidores físicos, el cloud computing permite a las organizaciones y usuarios acceder a estos recursos informáticos de manera remota a través de proveedores de servicios en la nube.
