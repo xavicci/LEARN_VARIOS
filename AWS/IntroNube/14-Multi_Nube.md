@@ -15,7 +15,7 @@ Utilizar mas de un proveedor de servicios de nube pública para desplegar una ap
     - Uso de open-source.
 ## Paralelo
     - Funciona como DRP
-    - RTO y RPO definidos
+    - RTO (objetivo de tiempo de recuperacion) y RPO (Punto de Recuperación objetivo) definidos
     - Alta complejidad tecnica
     - Alto Conocimiento en 2CSP
 ## Segmentado
